@@ -1,0 +1,83 @@
+sQuote = "Python is a great programming language"
+
+# 1
+result1 = sQuote[2:]
+# Result: "thon is a great programming language"
+
+# 2
+result2 = sQuote[2:5]
+# Result: "tho"
+
+# 3
+result3 = sQuote.isupper()
+# Result: False
+
+# 4
+result4 = len(sQuote)
+# Result: 34
+
+# 5
+result5 = sQuote.upper()
+# Result: "PYTHON IS A GREAT PROGRAMMING LANGUAGE"
+
+# 6
+result6 = sQuote.lower()
+# Result: "python is a great programming language"
+
+# 7
+result7 = sQuote.index("great")
+# Result: 10
+
+# 8
+result8 = sQuote[8]
+# Result: "s"
+
+# 9
+result9 = sQuote.find("Dan")
+# Result: -1
+
+# 10
+result10 = sQuote == "Brian"
+# Result: False
+
+# 11
+result11 = sQuote.replace("a", "@")
+# Result: "Python is @ gre@t progr@mming l@nguage"
+
+# 12
+result12 = sQuote == "Python"
+# Result: False
+
+# 13
+result13 = sQuote.lower().endswith('Age')
+# Result: True
+
+# 14
+sResult = sQuote[:9]
+# sResult: "Python is"
+
+# 15
+result15 = sQuote.rfind('a')
+# Result: 30
+
+# 16
+sQuote2 = "Python"
+result16 = sQuote2[::-1]
+# Result: "nohtyP"
+
+# 17
+result17 = sQuote2 + " is awesome!"
+# Result: "Python is awesome!"
+
+# 18
+result18 = sQuote2[-4:]
+# Result: "thon"
+
+# 19
+result19 = sQuote2[-4:-2]
+# Result: "th"
+
+# 20
+sQuote3 = "-->Python<--"
+result20 = sQuote3.strip('-')
+# Result: "Python"
