@@ -1,0 +1,78 @@
+# Function to get a valid float input from the user
+def getFloatInput(prompt):
+    while True:
+        try:
+            # Prompt user and convert input to float
+            value = float(input(prompt))
+            
+            # Check if value is positive and non-zero
+            if value <= 0:
+                print("Please enter a positive, non-zero number.")
+            else:
+                return value
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+# Function to calculate the median of a list
+def getMedian(values):
+    values.sort()  # Sort the list in ascending order
+    n = len(values)
+    
+    # If the number of entries is odd, return the middle element
+    if n % 2 != 0:
+        return values[n // 2]
+    # If the number of entries is even, return the average of the two middle elements
+    else:
+        middle1 = values[n // 2 - 1]
+        middle2 = values[n // 2]
+        return (middle1 + middle2) / 2
+
+# Main function to handle user input and calculate statistics
+def main():
+    sales_values = []  # List to store sales values
+    
+    while True:
+        # Get sales value from user
+        sales_value = getFloatInput("Enter property sales value: ")
+        sales_values.append(sales_value)
+        
+        # Ask user if they want to input another value
+        while True:
+            user_input = input("Enter another value Y or N: ").strip().lower()
+            if user_input == 'y':
+                break
+            elif user_input == 'n':
+                break
+            else:
+                print("Invalid input. Please enter Y or N.")
+        
+        if user_input == 'n':
+            break
+    
+    # Sort the list of sales values
+    sales_values.sort()
+
+    # Output the sorted sales values formatted as currency
+    print("\nSales Values:")
+    for value in sales_values:
+        print(f"${value:,.2f}")
+
+    # Calculate the minimum, maximum, total, average, median, and commission
+    min_value = sales_values[0]
+    max_value = sales_values[-1]
+    total_value = sum(sales_values)
+    average_value = total_value / len(sales_values)
+    median_value = getMedian(sales_values)
+    commission = total_value * 0.03
+    
+    # Output the statistics formatted as currency
+    print(f"\nMinimum value: ${min_value:,.2f}")
+    print(f"Maximum value: ${max_value:,.2f}")
+    print(f"Total value: ${total_value:,.2f}")
+    print(f"Average value: ${average_value:,.2f}")
+    print(f"Median value: ${median_value:,.2f}")
+    print(f"Commission (3% of total): ${commission:,.2f}")
+
+# Call the main function to run the program
+if __name__ == "__main__":
+    main()
